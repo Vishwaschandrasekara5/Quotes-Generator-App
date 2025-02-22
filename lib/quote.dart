@@ -23,7 +23,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
     Quote(text: 'In the middle of difficulty lies opportunity.', author: 'Albert Einstein', details: 'Einstein was a theoretical physicist who developed the theory of relativity.', category: 'Motivational'),
     Quote(text: 'It always seems impossible until it’s done.', author: 'Nelson Mandela', details: 'Nelson Mandela was a South African anti-apartheid revolutionary.', category: 'Motivational'),
     Quote(text: 'You must be the change you wish to see in the world.', author: 'Mahatma Gandhi', details: 'Mahatma Gandhi was an Indian lawyer and anti-colonial nationalist.', category: 'Motivational'),
-    
+
     // Inspirational Quotes
     Quote(text: 'In the middle of difficulty lies opportunity.', author: 'Albert Einstein', details: 'Einstein was a theoretical physicist who developed the theory of relativity.', category: 'Inspirational'),
     Quote(text: 'It always seems impossible until it’s done.', author: 'Nelson Mandela', details: 'Nelson Mandela was a South African anti-apartheid revolutionary.', category: 'Inspirational'),
@@ -31,7 +31,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
     Quote(text: 'Success is not final, failure is not fatal: It is the courage to continue that counts.', author: 'Winston Churchill', details: 'Winston Churchill was a British politician.', category: 'Inspirational'),
     Quote(text: 'The only way to do great work is to love what you do.', author: 'Steve Jobs', details: 'Steve Jobs was an American entrepreneur and co-founder of Apple Inc.', category: 'Inspirational'),
     Quote(text: 'Live as if you were to die tomorrow. Learn as if you were to live forever.', author: 'Mahatma Gandhi', details: 'Mahatma Gandhi was an Indian lawyer and anti-colonial nationalist.', category: 'Inspirational'),
-    
+
     // Love Quotes
     Quote(text: 'Love is composed of a single soul inhabiting two bodies.', author: 'Aristotle', details: 'Aristotle was a Greek philosopher.', category: 'Love'),
     Quote(text: 'To love and be loved is to feel the sun from both sides.', author: 'David Viscott', details: 'David Viscott was an American psychiatrist and author.', category: 'Love'),
@@ -39,7 +39,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
     Quote(text: 'True love cannot be found where it does not exist, nor can it be denied where it does.', author: 'Torquato Tasso', details: 'Torquato Tasso was an Italian poet.', category: 'Love'),
     Quote(text: 'Love does not dominate; it cultivates.', author: 'Johann Wolfgang von Goethe', details: 'Johann Wolfgang von Goethe was a German writer.', category: 'Love'),
     Quote(text: 'Where there is love, there is life.', author: 'Mahatma Gandhi', details: 'Mahatma Gandhi was an Indian lawyer and anti-colonial nationalist.', category: 'Love'),
-    
+
     // Wisdom Quotes
     Quote(text: 'The only true wisdom is in knowing you know nothing.', author: 'Socrates', details: 'Socrates was a Greek philosopher.', category: 'Wisdom'),
     Quote(text: 'Wisdom begins in wonder.', author: 'Socrates', details: 'Socrates was a Greek philosopher.', category: 'Wisdom'),
@@ -47,7 +47,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
     Quote(text: 'The journey of a thousand miles begins with one step.', author: 'Lao Tzu', details: 'Lao Tzu was an ancient Chinese philosopher.', category: 'Wisdom'),
     Quote(text: 'A fool thinks himself to be wise, but a wise man knows himself to be a fool.', author: 'William Shakespeare', details: 'William Shakespeare was an English playwright and poet.', category: 'Wisdom'),
     Quote(text: 'The only source of knowledge is experience.', author: 'Albert Einstein', details: 'Albert Einstein was a theoretical physicist.', category: 'Wisdom'),
-    
+
     // Humor Quotes
     Quote(text: 'I am not afraid of death, I just don’t want to be there when it happens.', author: 'Woody Allen', details: 'Woody Allen is an American director and comedian.', category: 'Humor'),
     Quote(text: 'Behind every great man is a woman rolling her eyes.', author: 'Jim Carrey', details: 'Jim Carrey is a Canadian-American comedian and actor.', category: 'Humor'),
@@ -76,6 +76,34 @@ class _QuoteScreenState extends State<QuoteScreen> {
         currentQuote = (filteredQuotes..shuffle()).first;
       });
     }
+  }
+
+  // Function to show the quote details in a dialog
+  void showQuoteDetails(Quote quote) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(quote.text),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Author: ${quote.author}', style: TextStyle(fontWeight: FontWeight.bold)),
+              SizedBox(height: 10),
+              Text('Details: ${quote.details}'),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Close'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -140,42 +168,45 @@ class _QuoteScreenState extends State<QuoteScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 120),
-                  child: Card(
-                    elevation: 4,
-                    color: Colors.white.withOpacity(0.2),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: SizedBox(
-                      width: 400,
-                      height: 550,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              '"${currentQuote.text}"',
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontStyle: FontStyle.italic,
-                                color: Color.fromARGB(255, 255, 255, 255),
+                GestureDetector(
+                  onTap: () => showQuoteDetails(currentQuote), // Show details on tap
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 120),
+                    child: Card(
+                      elevation: 4,
+                      color: Colors.white.withOpacity(0.2),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: SizedBox(
+                        width: 400,
+                        height: 550,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '"${currentQuote.text}"',
+                                style: const TextStyle(
+                                  fontSize: 20,
+                                  fontStyle: FontStyle.italic,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              '- ${currentQuote.author}',
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(255, 255, 255, 255),
+                              const SizedBox(height: 10),
+                              Text(
+                                '- ${currentQuote.author}',
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                                textAlign: TextAlign.right,
                               ),
-                              textAlign: TextAlign.right,
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
