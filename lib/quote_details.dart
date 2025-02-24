@@ -37,7 +37,7 @@ class QuoteDetailsScreen extends StatelessWidget {
             children: [
               // Displaying the network image of the author
               CircleAvatar(
-                radius: 50,
+                radius: 80,
                 backgroundImage: NetworkImage(quote.imageUrl), // Loading the image from the network
                 onBackgroundImageError: (error, stackTrace) {
                   // In case of error, show a placeholder image
