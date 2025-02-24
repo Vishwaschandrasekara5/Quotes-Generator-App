@@ -13,70 +13,70 @@ class _QuoteScreenState extends State<QuoteScreen> {
       author: 'Oscar Wilde',
       details: 'Oscar Wilde was an Irish poet and playwright.',
       category: 'Motivational',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVkQH8jp7MrO9GlanMjVzXUrexSVJqYC8K9Q&s', // Add the image URL for Oscar Wilde
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVkQH8jp7MrO9GlanMjVzXUrexSVJqYC8K9Q&s', 
     ),
     Quote(
       text: 'Do what you can, with what you have, where you are.',
       author: 'Theodore Roosevelt',
       details: 'Theodore Roosevelt was the 26th President of the United States.',
       category: 'Motivational',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSluHBVZPS2-zwruzr_Jvte5iHHJGMYH2a9Sw&s', // Add the image URL for Theodore Roosevelt
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSluHBVZPS2-zwruzr_Jvte5iHHJGMYH2a9Sw&s', 
     ),
     Quote(
       text: 'In the middle of difficulty lies opportunity.',
       author: 'Albert Einstein',
       details: 'Einstein was a theoretical physicist who developed the theory of relativity.',
       category: 'Inspirational',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwB8-VBOacbJPwYTG7xflxLZKdhwW319DYQ&s', // Add the image URL for Albert Einstein
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbwB8-VBOacbJPwYTG7xflxLZKdhwW319DYQ&s', 
     ),
     Quote(
       text: 'It does not matter how slowly you go as long as you do not stop.',
       author: 'Confucius',
       details: 'Confucius was a Chinese philosopher and politician.',
       category: 'Inspirational',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2eODqB-GBtIbpUVMk8JJ7ZY_22bLQqqZ2w&s', // Add the image URL for Confucius
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq2eODqB-GBtIbpUVMk8JJ7ZY_22bLQqqZ2w&s', 
     ),
     Quote(
       text: 'The best way to predict the future is to create it.',
       author: 'Peter Drucker',
       details: 'Peter Drucker was an Austrian-American management consultant.',
       category: 'Success',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiTF2Sg1t6V_YzUplvzlMbZtuR_JhN5HeJGQ&s', // Add the image URL for Peter Drucker
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiTF2Sg1t6V_YzUplvzlMbZtuR_JhN5HeJGQ&s',
     ),
     Quote(
       text: 'Opportunities don’t happen, you create them.',
       author: 'Chris Grosser',
       details: 'Chris Grosser is a business strategist.',
       category: 'Success',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVxq1v-g2tQT6mhoMc3HTHTgx9C1j4fmZ4xw&s', // Add the image URL for Chris Grosser
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVxq1v-g2tQT6mhoMc3HTHTgx9C1j4fmZ4xw&s', 
     ),
     Quote(
       text: 'Happiness depends upon ourselves.',
       author: 'Aristotle',
       details: 'Aristotle was a Greek philosopher and polymath.',
       category: 'Happiness',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrwBg2C8IagKcnyG47fq4autjt3jy2mT94Ug&s', // Add the image URL for Aristotle
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrwBg2C8IagKcnyG47fq4autjt3jy2mT94Ug&s', 
     ),
     Quote(
       text: 'Happiness is not something ready-made. It comes from your own actions.',
       author: 'Dalai Lama',
       details: 'Dalai Lama is a spiritual leader of Tibet.',
       category: 'Happiness',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpf_-IEj4dlMtUzAWZtNsXJEq4Zb66-iqocg&s', // Add the image URL for Dalai Lama
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpf_-IEj4dlMtUzAWZtNsXJEq4Zb66-iqocg&s', 
     ),
     Quote(
       text: 'A healthy outside starts from the inside.',
       author: 'Robert Urich',
       details: 'Robert Urich was an American film actor.',
       category: 'Health',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaYZ_v7DZM0sfer3CGJOLymwhG-fbDhxgdhA&s', // Add the image URL for Robert Urich
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaYZ_v7DZM0sfer3CGJOLymwhG-fbDhxgdhA&s', 
     ),
     Quote(
       text: 'Take care of your body. It’s the only place you have to live.',
       author: 'Jim Rohn',
       details: 'Jim Rohn was an American entrepreneur and motivational speaker.',
       category: 'Health',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyakwmvR_eqbneOkMGsBfTM5zUubUArRhP4Q&s', // Add the image URL for Jim Rohn
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyakwmvR_eqbneOkMGsBfTM5zUubUArRhP4Q&s', 
     ),
   ];
 
@@ -159,7 +159,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
-                  onTap: () => navigateToQuoteDetails(currentQuote), // Navigate to details on tap
+                  onTap: () => navigateToQuoteDetails(currentQuote), 
                   child: Container(
                     margin: const EdgeInsets.only(top: 120),
                     child: Card(

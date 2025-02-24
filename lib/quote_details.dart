@@ -5,14 +5,14 @@ class Quote {
   String author;
   String details;
   String category;
-  String imageUrl; // Added imageUrl to store the author's image URL
+  String imageUrl; 
 
   Quote({
     required this.text,
     required this.author,
     required this.details,
     required this.category,
-    required this.imageUrl, // Constructor now takes imageUrl as a parameter
+    required this.imageUrl, 
   });
 }
 
@@ -28,20 +28,20 @@ class QuoteDetailsScreen extends StatelessWidget {
         title: const Text('Quote Details'),
         backgroundColor: Colors.orange,
       ),
-      body: Center( // Center the entire content
+      body: Center( 
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
-            crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
+            mainAxisAlignment: MainAxisAlignment.center, 
+            crossAxisAlignment: CrossAxisAlignment.center, 
             children: [
-              // Displaying the network image of the author
+              
               CircleAvatar(
                 radius: 80,
-                backgroundImage: NetworkImage(quote.imageUrl), // Loading the image from the network
+                backgroundImage: NetworkImage(quote.imageUrl), 
                 onBackgroundImageError: (error, stackTrace) {
-                  // In case of error, show a placeholder image
-                  // You can handle the error here, but you cannot return a widget
+                  
+                  
                 },
               ),
               const SizedBox(height: 20),
