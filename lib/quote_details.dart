@@ -5,8 +5,15 @@ class Quote {
   String author;
   String details;
   String category;
+  String imageUrl; // Added imageUrl to store the author's image URL
 
-  Quote({required this.text, required this.author, required this.details, required this.category});
+  Quote({
+    required this.text,
+    required this.author,
+    required this.details,
+    required this.category,
+    required this.imageUrl, // Constructor now takes imageUrl as a parameter
+  });
 }
 
 class QuoteDetailsScreen extends StatelessWidget {
@@ -28,6 +35,16 @@ class QuoteDetailsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center, // Center vertically
             crossAxisAlignment: CrossAxisAlignment.center, // Center horizontally
             children: [
+              // Displaying the network image of the author
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: NetworkImage(quote.imageUrl), // Loading the image from the network
+                onBackgroundImageError: (error, stackTrace) {
+                  // In case of error, show a placeholder image
+                  // You can handle the error here, but you cannot return a widget
+                },
+              ),
+              const SizedBox(height: 20),
               Text(
                 '"${quote.text}"',
                 style: const TextStyle(fontSize: 24, fontStyle: FontStyle.italic),
