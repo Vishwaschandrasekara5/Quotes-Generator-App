@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'quote_details.dart'; // Import the QuoteDetailsScreen
 
+// Define the QuoteScreen as a StatefulWidget
 class QuoteScreen extends StatefulWidget {
   @override
   _QuoteScreenState createState() => _QuoteScreenState();
 }
 
 class _QuoteScreenState extends State<QuoteScreen> {
+  // List of quotes with details
   List<Quote> quotes = [
     Quote(
       text: 'Be yourself; everyone else is already taken.',
@@ -94,8 +96,10 @@ class _QuoteScreenState extends State<QuoteScreen> {
     ),
   ];
 
-  late Quote currentQuote;
-  String selectedCategory = "All";
+   late Quote currentQuote; // Stores the currently displayed quote
+  String selectedCategory = "All"; // Default selected category
+
+  // List of categories available for filtering quotes
   final List<String> categories = [
     "All",
     "Motivational",
@@ -108,9 +112,10 @@ class _QuoteScreenState extends State<QuoteScreen> {
   @override
   void initState() {
     super.initState();
-    currentQuote = quotes.first;
+    currentQuote = quotes.first; // Set initial quote to the first one in the list
   }
 
+  // Function to fetch a random quote based on the selected category
   void fetchRandomQuote() {
     List<Quote> filteredQuotes = selectedCategory == "All"
         ? quotes
@@ -118,11 +123,12 @@ class _QuoteScreenState extends State<QuoteScreen> {
 
     if (filteredQuotes.isNotEmpty) {
       setState(() {
-        currentQuote = (filteredQuotes..shuffle()).first;
+        currentQuote = (filteredQuotes..shuffle()).first; // Pick a random quote
       });
     }
   }
 
+  // Navigate to the quote details screen when a quote is tapped
   void navigateToQuoteDetails(Quote quote) {
     Navigator.push(
       context,
@@ -144,6 +150,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
           style: TextStyle(color: Colors.orange),
         ),
         actions: [
+          // Dropdown for category selection
           DropdownButton<String>(
             dropdownColor: Colors.black87,
             value: selectedCategory,
@@ -153,7 +160,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
               if (newCategory != null) {
                 setState(() {
                   selectedCategory = newCategory;
-                  fetchRandomQuote();
+                  fetchRandomQuote(); // Fetch a new quote based on selection
                 });
               }
             },
@@ -169,6 +176,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
       ),
       body: Stack(
         children: [
+          // Background image
           Positioned.fill(
             child: Image.asset(
               'assets/back.jpg',
@@ -180,6 +188,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Tapable quote card that navigates to details screen
                 GestureDetector(
                   onTap: () => navigateToQuoteDetails(currentQuote),
                   child: Container(
@@ -198,17 +207,19 @@ class _QuoteScreenState extends State<QuoteScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+                              // Quote text
                               Text(
                                 '"${currentQuote.text}"',
                                 style: const TextStyle(
-                                  fontSize: 28, // Increased font size
-                                  fontWeight: FontWeight.bold, // Bold text
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic,
                                   color: Color.fromARGB(255, 255, 255, 255),
                                 ),
                                 textAlign: TextAlign.center,
                               ),
                               const SizedBox(height: 10),
+                              // Quote author
                               Text(
                                 '- ${currentQuote.author}',
                                 style: const TextStyle(
@@ -226,6 +237,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
+                // Button to fetch a new random quote
                 SizedBox(
                   width: 300,
                   height: 50,
@@ -250,3 +262,4 @@ class _QuoteScreenState extends State<QuoteScreen> {
     );
   }
 }
+

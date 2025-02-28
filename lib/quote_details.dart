@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// Quote model class to store quote details
 class Quote {
   String text;
   String author;
@@ -16,6 +17,7 @@ class Quote {
   });
 }
 
+// Quote details screen to display individual quote information
 class QuoteDetailsScreen extends StatelessWidget {
   final Quote quote;
 
@@ -30,7 +32,7 @@ class QuoteDetailsScreen extends StatelessWidget {
         automaticallyImplyLeading: false, // Removes the default back button
       ),
       body: Container(
-        color: const Color.fromARGB(255, 31, 29, 29), // Background color set to black
+        color: const Color.fromARGB(255, 31, 29, 29), // Background color set to dark theme
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -42,12 +44,14 @@ class QuoteDetailsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      // Displays quote image
                       CircleAvatar(
                         radius: 80,
                         backgroundImage: NetworkImage(quote.imageUrl),
                         onBackgroundImageError: (error, stackTrace) {},
                       ),
                       const SizedBox(height: 20),
+                      // Displays quote text
                       Text(
                         '"${quote.text}"',
                         style: const TextStyle(
@@ -58,6 +62,7 @@ class QuoteDetailsScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 20),
+                      // Displays author name
                       Text(
                         'Author: ${quote.author}',
                         style: const TextStyle(
@@ -68,6 +73,7 @@ class QuoteDetailsScreen extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(height: 10),
+                      // Displays additional details about the author
                       Text(
                         'Details: ${quote.details}',
                         style: const TextStyle(
@@ -81,6 +87,7 @@ class QuoteDetailsScreen extends StatelessWidget {
                 ),
               ),
             ),
+            // Back button to return to the previous screen
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0), // Adds spacing at the bottom
               child: SizedBox(
